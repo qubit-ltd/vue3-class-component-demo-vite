@@ -13,10 +13,10 @@ import babelParser from '@babel/eslint-parser';
 export default [
   // Base recommended configuration
   js.configs.recommended,
-  
+
   // Vue essential configuration for .vue files
   ...vue.configs['flat/essential'],
-  
+
   // Custom configuration
   {
     files: ['**/*.js', '**/*.vue'],
@@ -61,14 +61,15 @@ export default [
       // 'max-classes-per-file': 'off',
     }
   },
-  
+
   // Ignore patterns
   {
     ignores: [
       'node_modules/**',
       'dist/**',
       '.yarn/**',
-      'coverage/**'
+      'coverage/**',
+      'doc/**'
     ]
   }
 ];
