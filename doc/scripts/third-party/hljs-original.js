@@ -51,7 +51,7 @@ var hljs = (function () {
      * @param {CompiledMode} mode
      */
     constructor(mode) {
-      // eslint-disable-next-line no-undefined
+       
       if (mode.data === undefined) mode.data = {};
 
       this.data = mode.data;
@@ -238,7 +238,7 @@ var hljs = (function () {
       if (this.stack.length > 1) {
         return this.stack.pop();
       }
-      // eslint-disable-next-line no-undefined
+       
       return undefined;
     }
 
@@ -793,7 +793,7 @@ var hljs = (function () {
    * @type {CompilerExt}
    */
   function scopeClassName(mode, _parent) {
-    // eslint-disable-next-line no-undefined
+     
     if (mode.className !== undefined) {
       mode.scope = mode.className;
       delete mode.className;
@@ -821,7 +821,7 @@ var hljs = (function () {
 
     // prevents double relevance, the keywords themselves provide
     // relevance, the mode doesn't need to double it
-    // eslint-disable-next-line no-undefined
+     
     if (mode.relevance === undefined) mode.relevance = 0;
   }
 
@@ -853,7 +853,7 @@ var hljs = (function () {
    * @type {CompilerExt}
    */
   function compileRelevance(mode, _parent) {
-    // eslint-disable-next-line no-undefined
+     
     if (mode.relevance === undefined) mode.relevance = 1;
   }
 
@@ -1020,7 +1020,7 @@ var hljs = (function () {
     seenDeprecations[`${version}/${message}`] = true;
   };
 
-  /* eslint-disable no-throw-literal */
+   
 
   /**
   @typedef {import('highlight.js').CompiledMode} CompiledMode
@@ -1238,7 +1238,7 @@ var hljs = (function () {
           return null;
         }
 
-        // eslint-disable-next-line no-undefined
+         
         const i = match.findIndex((el, i) => i > 0 && el !== undefined);
         // @ts-ignore
         const matchData = this.matchIndexes[i];
@@ -1737,7 +1737,7 @@ var hljs = (function () {
         ignoreIllegals = optionsOrCode.ignoreIllegals;
         languageName = optionsOrCode.language;
         // continuation not supported at all via the new API
-        // eslint-disable-next-line no-undefined
+         
         continuation = undefined;
       } else {
         // old API
@@ -1754,7 +1754,7 @@ var hljs = (function () {
       }
 
       // https://github.com/highlightjs/highlight.js/issues/3149
-      // eslint-disable-next-line no-undefined
+       
       if (ignoreIllegals === undefined) {
         ignoreIllegals = true;
       }
@@ -1907,7 +1907,7 @@ var hljs = (function () {
        */
       function emitMultiClass(scope, match) {
         let i = 1;
-        // eslint-disable-next-line no-undefined
+         
         while (match[i] !== undefined) {
           if (!scope._emit[i]) {
             i++;

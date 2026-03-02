@@ -7,7 +7,7 @@ var html = document.querySelector("html");
 var MAX_FONT_SIZE = 30;
 var MIN_FONT_SIZE = 10;
 
-// eslint-disable-next-line no-undef
+ 
 var localStorage = window.localStorage;
 
 function getTheme() {
@@ -23,9 +23,9 @@ function getTheme() {
       return theme;
     case "fallback-dark":
       if (
-        // eslint-disable-next-line no-undef
+         
         window.matchMedia("(prefers-color-scheme)").matches &&
-        // eslint-disable-next-line no-undef
+         
         window.matchMedia("(prefers-color-scheme: light)").matches
       ) {
         return "light";
@@ -35,9 +35,9 @@ function getTheme() {
 
     case "fallback-light":
       if (
-        // eslint-disable-next-line no-undef
+         
         window.matchMedia("(prefers-color-scheme)").matches &&
-        // eslint-disable-next-line no-undef
+         
         window.matchMedia("(prefers-color-scheme: dark)").matches
       ) {
         return "dark";
@@ -202,7 +202,7 @@ function bringElementIntoView(element, updateHistory = true) {
   }
 }
 
-// eslint-disable-next-line no-unused-vars
+ 
 function bringLinkToView(event) {
   event.preventDefault();
   event.stopPropagation();
@@ -224,7 +224,7 @@ function bringIdToViewOnMount() {
     return;
   }
 
-  // eslint-disable-next-line no-undef
+   
   var id = window.location.hash;
 
   if (id === "") {
@@ -373,7 +373,7 @@ function processAllPre() {
     navbarHeight = navbar.getBoundingClientRect().height;
   }
 
-  // eslint-disable-next-line no-undef
+   
   var preMaxHeight = window.innerHeight - navbarHeight - footerHeight - 250;
 
   targets.forEach(function (pre, idx) {
@@ -400,7 +400,7 @@ function processAllPre() {
 }
 
 function highlightAndBringLineIntoView() {
-  // eslint-disable-next-line no-undef
+   
   var lineNumber = window.location.hash.replace("#line", "");
 
   try {
@@ -695,10 +695,10 @@ function onDomContentLoaded() {
   highlightActiveLinkInSidebar();
 }
 
-// eslint-disable-next-line no-undef
+ 
 window.addEventListener("DOMContentLoaded", onDomContentLoaded);
 
-// eslint-disable-next-line no-undef
+ 
 window.addEventListener("hashchange", (event) => {
   const url = new URL(event.newURL);
 
@@ -707,7 +707,7 @@ window.addEventListener("hashchange", (event) => {
   }
 });
 
-// eslint-disable-next-line no-undef
+ 
 window.addEventListener("storage", (event) => {
   if (event.newValue === "undefined") return;
 

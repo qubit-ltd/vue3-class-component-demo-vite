@@ -54,9 +54,9 @@ var NAVBAR_OPTIONS = {};
   }
 
   function setupEventListeners() {
-    // eslint-disable-next-line no-undef
+     
     window.addEventListener("mousemove", resizeNavbar);
-    // eslint-disable-next-line no-undef
+     
     window.addEventListener("touchmove", resizeNavbar);
   }
 
@@ -71,16 +71,16 @@ var NAVBAR_OPTIONS = {};
   }
 
   function removeEventListeners() {
-    // eslint-disable-next-line no-undef
+     
     window.removeEventListener("mousemove", resizeNavbar);
-    // eslint-disable-next-line no-undef
+     
     window.removeEventListener("touchend", resizeNavbar);
     afterRemovingEventListeners();
   }
 
   navbarSlider.addEventListener("mousedown", setupEventListeners);
   navbarSlider.addEventListener("touchstart", setupEventListeners);
-  // eslint-disable-next-line no-undef
+   
   window.addEventListener("mouseup", removeEventListeners);
 })();
 

@@ -13,13 +13,13 @@ function showResultText(text) {
 }
 
 function hideSearch() {
-  // eslint-disable-next-line no-undef
+   
   if (window.location.hash === searchHash) {
     // eslint-disable-next-line no-undef
     history.go(-1);
   }
 
-  // eslint-disable-next-line no-undef
+   
   window.onhashchange = null;
 
   if (searchContainer) {
@@ -30,7 +30,7 @@ function hideSearch() {
 function listenCloseKey(event) {
   if (event.key === "Escape") {
     hideSearch();
-    // eslint-disable-next-line no-undef
+     
     window.removeEventListener("keyup", listenCloseKey);
   }
 }
@@ -46,10 +46,10 @@ function showSearch() {
     console.error(error);
   }
 
-  // eslint-disable-next-line no-undef
+   
   window.onhashchange = hideSearch;
 
-  // eslint-disable-next-line no-undef
+   
   if (window.location.hash !== searchHash) {
     // eslint-disable-next-line no-undef
     history.pushState(null, null, searchHash);
@@ -57,7 +57,7 @@ function showSearch() {
 
   if (searchContainer) {
     searchContainer.style.display = "flex";
-    // eslint-disable-next-line no-undef
+     
     window.addEventListener("keyup", listenCloseKey);
   }
 
@@ -70,7 +70,7 @@ async function fetchAllData() {
   // eslint-disable-next-line no-undef
   const { hostname, protocol, port } = location;
 
-  // eslint-disable-next-line no-undef
+   
   const base =
     // eslint-disable-next-line no-undef
     protocol + "//" + hostname + (port !== "" ? ":" + port : "") + baseURL;
@@ -167,13 +167,13 @@ function debounce(func, wait, immediate) {
     timeout = setTimeout(() => {
       timeout = null;
       if (!immediate) {
-        // eslint-disable-next-line consistent-this, no-invalid-this
+         
         func.apply(this, args);
       }
     }, wait);
 
     if (immediate && !timeout) {
-      // eslint-disable-next-line consistent-this, no-invalid-this
+       
       func.apply(this, args);
     }
   };
@@ -200,7 +200,7 @@ async function search(event) {
     showResultText("Loading...");
 
     try {
-      // eslint-disable-next-line require-atomic-updates
+       
       searchData = await fetchAllData();
     } catch (e) {
       console.log(e);
@@ -217,7 +217,7 @@ async function search(event) {
     return;
   }
 
-  // eslint-disable-next-line require-atomic-updates
+   
   resultBox.innerHTML = buildSearchResult(result);
 }
 
@@ -249,18 +249,18 @@ function onDomContentLoaded() {
     searchInput.addEventListener("keyup", debouncedSearch);
   }
 
-  // eslint-disable-next-line no-undef
+   
   if (window.location.hash === searchHash) {
     showSearch();
   }
 }
 
-// eslint-disable-next-line no-undef
+ 
 window.addEventListener("DOMContentLoaded", onDomContentLoaded);
 
-// eslint-disable-next-line no-undef
+ 
 window.addEventListener("hashchange", function () {
-  // eslint-disable-next-line no-undef
+   
   if (window.location.hash === searchHash) {
     showSearch();
   }
